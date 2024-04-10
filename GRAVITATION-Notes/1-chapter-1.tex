@@ -1,0 +1,109 @@
+\section{Geometrodynamics}\label{sec:chapter1}
+
+
+\subsection{The parable of the apple}\label{susec:1_1}
+Space tells matter how to move and matter tells space how to curve.
+
+\subsection{Spacetime with and without coordinates}\label{susec:1_2}
+\subsubsection{\hint for possible different characterization \page{6}}
+
+\enquote{But with all the daring in the world, how is one to drive a nail into spacetime to mark a point? Happily, nature provides its own way to localize a point in spacetime, as Einstein was the first to emphasize. Characterize the point by what happens there!}
+
+\subsubsection{\hint from idealized limit \page{10}}
+
+\enquote{A more detailed diagram would show a maze of world line and of light rays and the intersections between them. From such a picture, one can in imagination step to the \emph{idealized} limit: an infinitely dense collection of light rays and of world lines of infinitesimal test particles.}
+
+\subsubsection{\hint of breakdown of manifold description \page{12}}
+\enquote{Not so quantum general relativity or \enquote{quantum geometrodynamics}. It predicts violent fluctuations in the geometry at distances on the order of the Planck length,\dots As nearly as one can estimate these fluctuations give space at small distances a \enquote{multiply connected} or \enquote{foam-like} character.}
+
+\subsection{Weightlessness}\label{susec:1_3}
+\subsubsection{\cbox{1.2} \page{16}}
+\paragraph{Lorand von Eötvös}
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+		\def\r{4} % radius
+		\def\ang1{30}
+		\def\q{{\r/cos(\ang1)}}
+		\def\t{{\r*sin(\ang1)}}
+		\def\zt{0.5}
+		\coordinate (A) at (\ang1:1cm);
+		\coordinate (C) at (0,1);
+		\coordinate (B) at (0,0);
+		
+		\draw[->] (0,-0.1*\r) -- (0,1.3*\r);
+		\draw[->] (-0.1*\r,0) -- (1.3*\r,0);
+		
+		\draw pic [fill=green!20, angle radius=9mm,
+		"$\theta$"] {angle = A--B--C};
+		
+		\coordinate (O) at (0,0); % circle center O	
+		\coordinate (Q) at (\q,0); % external point Q
+		\coordinate (P) at (\ang1:\r); % point of tangency, P
+		\coordinate (R) at (0,\t); % y intercept of P
+		\coordinate (T) at ($(Q)!1.3!(P)$); % y intercept of P
+		
+		\draw pic [fill=green!20, angle radius=9mm,
+		"$\theta$"] {angle = T--P--R};
+		
+		\draw [blue,thick](\r,0mm) arc [start angle=0, end angle=90, radius=\r];
+		\draw[green,thick] ($(Q)!0.5!(P)$) -- ($(Q)!1.5!(P)$);
+		\draw[green,thick] (O) --node[midway,sloped,below] {R} (P);
+		\draw[gray,thick] (R) --node[midway,sloped,below] {$R\sin(\theta)$} (P);
+		\draw[->, red, thick] (P) -- node[midway,sloped,below] {g}($(P)!-0.3!(O)$);
+		\draw[->, red, thick] (P) -- node[near end,sloped,above] {$a_z$}($(P)!\zt!(R)$);
+		
+		%\fill[red] (O) circle(0.05) node[below right] {O};
+		%\fill[red] (Q) circle(0.05) node[below left] {Q};
+		%\fill[red] (P) circle(0.05) node[above,right=0.2cm] {P};
+		%\fill[red] (R) circle(0.05) node[above] {R};
+	\end{tikzpicture}
+	\begin{tikzpicture}[rotate=90]
+		
+		\def\r{3} % radius
+		\def\ang1{30}
+		
+		\coordinate (O) at (0,0); 
+		\coordinate (P) at (0,\r);
+		\coordinate (Q) at (\ang1:{\r*sin(\ang1)});
+		
+		\draw pic [fill=green!20, angle radius=9mm,
+		"$\theta$"] {angle = Q--O--P};
+		
+		\draw[->, red, thick] (O) -- node[midway,above] {$a_z$}(P);
+		\draw[green,thick] (O) --node[midway,above,right] {$a_z\cos(\theta)$} (Q);
+		\draw[gray,thick] (P) --node[midway,above, left=0.2] {$a_z\sin(\theta)$} (Q);
+	\end{tikzpicture}
+	\caption{Forces mentioned in \cbox{1.2},  \emph{Lorand von Eötvös}, where $R$ is the radius of the earth and $\theta$ is the angle measured from the north pole}
+	\label{fig:1_3_1}
+\end{figure}
+
+The forces mentioned are shown in \reffig{1_3_1}, from which we directly observe that the centripetal acceleration is in total
+\[a_z=\omega^2 R \sin(\theta),\]
+which is \emph{independent} of $g$ in this way of viewing forces ($\omega$ is the rotation speed of the earth).
+From this we get the northward directed part of $a_z$  to be 
+
+\[a_z \cos(\theta)=\omega^2 R \sin(\theta)\cos(\theta).\]
+
+\paragraph{Beall}
+We know the highest observed energies of the myon to be \[E_\mu = \SI{1e13}{\electronvolt}.\]
+While the upper threshold is mentioned to be \[E_{\text{thresh}}=\num{1e3} m c^2\].
+If now the myon were to be \enquote{too light} we would have \[E_\mu>E_{\text{thresh}}.\]
+
+On the other hand we know the highest observed energies of photons to be \[E_\gamma=\SI{1e13}{\electronvolt}.\]
+The transferred energy (to a photon) mentioned results in \[E_\gamma\geq 2 m c^2.\] These two observations combined put an upper limit (Not \enquote{too heavy}) on $m$.
+
+\subsubsection{\enquote{This assumption of exact physical equivalence makes it impossible for us to speak of the absolute acceleration of the system of reference, \dots} \page{17}}
+This because any part of the acceleration could be due to a gravitational field.
+
+
+\subsection{Local Lorentz Geometry, with and without Coordinates}\label{susec:1_4}
+\subsubsection{\hint: What about breakdown at small scales? \page{21}}
+\enquote{The geometry of spacetime is locally Lorentzian everywhere.}
+
+\subsection{Time}\label{susec:1_5}
+
+\subsection{Curvature}\label{susec:1_6}
+
+\subsection{Effect of Matter on Geometry}\label{susec:1_7}
+

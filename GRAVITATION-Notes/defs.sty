@@ -13,3 +13,23 @@
 \newcommand*\identity{\ensuremath{\mathbf{1}}}
 \newcommand*\diagm[1]{\ensuremath{\text{diag}\left({#1}\right)}}
 \newcommand*\chargeconjugate{\ensuremath{\mathsf{C}}}
+
+\newcommand*\cbox[1]{Box~\ensuremath{{#1}}}
+\newcommand*\reffig[1]{Fig.~\ref{fig:#1}}
+\newcommand*\crefeq[1]{Eq.~\ref{eq:#1}}
+\newcommand*\refsec[1]{Sect.~\ref{sec:#1}}
+\newcommand*\refsusec[1]{Sub Sect.~\ref{susec:#1}}
+\newcommand*\refsususec[1]{Sub Sub Sect.~\ref{sususec:#1}}
+
+\newcommand*\hint{\colorbox{yellow}{Hint}}
+
+% Usual (decimal) numbering
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+% Fix references
+\makeatletter
+\renewcommand{\p@subsection}{}
+\renewcommand{\p@subsubsection}{}
+\makeatother
