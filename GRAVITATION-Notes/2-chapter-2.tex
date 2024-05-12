@@ -1,17 +1,207 @@
 \section{Foundations of Special Relativity}\label{sec:chapter2}
 
-\subsection{Quantum Mechanics}\label{susec:2_1}
 
-\subsection{Symmetries}\label{susec:2_2}
-\subsubsection{\enquote{For this to be unitary and linear, $t$ must be Hermitian and linear} \page{51}}\label{sususec:2_2_p51_1}
-Linearity is trivial and hermiticity follow from the following observation:
+\subsection{Overview}\label{susec:2_1}
+Assumed background.
+
+\subsection{Geometric Objects}\label{susec:2_2}
+Geometric objects exist independently of coordinates.
+
+\subsection{Vectors}\label{susec:2_3}
+\subsubsection{\enquote{\dots and only thereafter draw the straight line $\mathcal{P}(0)+\lambda\left(\derivative{\mathcal{P}}{\lambda}\right)_0$\dots} \page{49}}\label{sususec:2_3_p49_1}
+
+Strictly speaking this addition is not possible, because the point $\mathcal{P}(0)$ lives in the manifold and the tangent vector $\left(\derivative{\mathcal{P}}{\lambda}\right)_0$ live in tangent space at $\mathcal{P}(0)$. In case of flat space, these spaces should be isomorphic, s.t. one can symbolically write the addition like it is done here.
+
+\subsubsection{\enquote{Relative to the origin $\mathcal{O}$ of this frame, the world line has a coordinate description\dots} \page{50}}\label{sususec:2_3_p50_1}
+Such a direct description is only possible in flat space, as there we can define a complete set of basis vectors.
+\subsection{The metric tensor}\label{susec:2_4}
+Useful.
+\subsection{Differential forms}\label{susec:2_5}
+
+\subsubsection{\cfig{2.5} \page{56}}
+
+\paragraph{\enquote{At different events, $\boldsymbol{\tilde{k}}=\boldsymbol{\dd}{\phi}$ is different\dots}}
+What is described here is the concept of a form field.
+
+\subsubsection{\enquote{The surface of $\boldsymbol{\tilde{k}}$ that passes through $\mathcal{P}_0$ contains points $\mathcal{P}$ for which $\apply{\boldsymbol{\tilde{k}}}{\mathcal{P}-\mathcal{P}_0}=0$} \page{56}}\label{sususec:2_5_p56_1}
+This can't be so easily written down in GR as $\mathcal{P}\in \mathcal{M}$ and \emph{not} $\mathcal{P}\in T\mathcal{M}$.
+ 
+\subsubsection{\eq{2.13} \page{57}}
+\todo
+
+\subsubsection{\cfig{2.7} \page{58}}
+\paragraph{Direction of $\boldsymbol{A}$ and $ \boldsymbol{\tilde{A}}$} \label{pa:2_5_p58_1}
+Assume components of $\boldsymbol{A}$ to be $(a,0,0,0)$. From this we get for any vector $\boldsymbol{v}$:
 \begin{align*} 
-	\innerproduct{U\Psi}{U\Phi}=&\innerproduct{(1+i\varepsilon t) \Psi}{(1+i\varepsilon t) \Phi}\\
-	=&\innerproduct{\Psi}{\Phi}+\varepsilon i\left(\innerproduct{\Psi}{t \Phi}-\innerproduct{t\Psi}{ \Phi}\right)+\order{\varepsilon^2}\\
-	\overset{\eq{2.2.2}}{\Leftrightarrow}&\innerproduct{\Psi}{t \Phi}=\innerproduct{t\Psi}{\Phi}\\
-	\overset{\eq{2.1.5}}{\Leftrightarrow}&t^\dagger=t
+	\boldsymbol{A}\cdot \boldsymbol{v}&\overset{\eqc{2.11}}{=}-a v^0\\
+	&\overset{\eqc{2.14}}{=}\apply{\boldsymbol{\tilde{A}}}{\boldsymbol{v}}\\
+	&\overset{\eqc{2.22}}{=}\tilde{A}_\alpha v^\alpha\\
+	\Rightarrow \tilde{A}_i&=0\\
+	\Rightarrow \tilde{A}_0&=-a
 \end{align*}
 
-\subsubsection{\eq{2.2.19} \page{54}}
-$f^a_{bc}$ and $f^a$ have to be real as $\theta^a$ are real.
+\subsubsection{\enquote{Consider a 1-form representing the march of Lorentz coordinate time toward the future. The corresponding vector points toward the past \dots} \page{59}}\label{sususec:2_5_p59_1}
+From \ref{pa:2_5_p58_1} we observe for $a=-1$:
+\[\boldsymbol{A}=- \boldsymbol{e}_0\qquad \boldsymbol{\tilde{A}}=\boldsymbol{\dd}x^0\]
+
+\subsubsection{\enquote{Such practice is justified by the unique correspondence between $\boldsymbol{\tilde{p}}$ and $\boldsymbol{p}$.} \page{59}}\label{sususec:2_5_p59_2}
+This is the metric duality in \todo .
+
+\subsubsection{\exercise{2.1} \page{59}}
+Set $\mathcal{P}_0=0 \Rightarrow x=\mathcal{P}-\mathcal{P}_0=\mathcal{P}$, s.t.:
+\begin{align*} 
+	\apply{\boldsymbol{\tilde{p}}}{\boldsymbol{x}}
+	&=\hbar \left(\Phi(\mathcal{P})-\Phi(\mathcal{P}_0)\right)\\
+	&=\hbar\left(\Phi(x)-\Phi(0)\right)\\
+	&=\hbar\left(k\cdot x - \omega t\right)\\
+	&=\boldsymbol{p}\cdot\boldsymbol{x}
+\end{align*}
+Where the first equality holds since $\Phi(x)$ is linear in $x$ an therefore all terms  of higher order in $x$ in \eq{2.13} are actually zero.
+
+\subsection{Gradients and directional derivatives}\label{susec:2_6}
+\subsubsection{\eq{2.17} \page{60}}  
+This is the analog of defining how the basis of the cotangent space acts on the basis of the tangent space (see \eq{2.19}), because $\partial_{\boldsymbol{v}}f$ can be defined in a coordinate free manner.    
+
+\subsection{Coordinate representation of geometric objects}\label{susec:2_7} 
+\subsubsection{\exercise{2.2} \page{62}}\label{sususec:exe_2_2}  
+\begin{align*} 
+	u^\gamma \eta_{\gamma \alpha}&=u^\gamma \eta_{\gamma \beta} \delta^\beta_\alpha\\
+	&=\boldsymbol{u}\cdot \boldsymbol{e}_\alpha\\
+	&=\apply{\boldsymbol{\tilde{u}}}{\boldsymbol{e}_\alpha}\\
+	&=u_\alpha
+\end{align*}
+\subsubsection{\exercise{2.3} \page{62}}  \label{sususec:exe_2_3} 
+Trivial since $\|\eta^{\alpha\beta}\|$ is the inverse of $\|\eta_{\alpha\beta}\|$:
+\begin{equation*} 
+	u^\alpha=\delta_\gamma^\alpha u^\gamma=\eta^{\alpha\beta}\eta_{\beta\gamma}u^\gamma=\eta^{\alpha\beta}u_\beta
+\end{equation*}
+
+\subsubsection{\exercise{2.4} \page{62}}    \label{sususec:exe_2_4} 
+ By definition, we have:
+ \begin{align*} 
+ 	\boldsymbol{u}\cdot \boldsymbol{v}&=\boldsymbol{g}(\boldsymbol{u}, \boldsymbol{v})
+ 	=u^\alpha v^\beta \eta_{\alpha\beta}\\
+ 	&\overset{\ref{sususec:exe_2_2}}{=}u^\alpha v_\alpha\\
+ 	&\overset{\ref{sususec:exe_2_3}}{=}u_\alpha v_\beta \eta^{\alpha\beta}\\
+ \end{align*}
+\subsection{The centrifuge and the photon}\label{susec:2_8} 
+\subsubsection{\enquote{\dots and the magnitudes - but not the directions - of $u_e$ and $u_a$ are equal.} \page{64}}\label{sususec:2_8_p64_1}
+This follows from \eq{2.2}.
+
+\subsubsection{\enquote{From the geometry of \cfig{2.9}, one sees that $u_e$ makes the same angle with $p$ as does $u_a$.} \page{64}}\label{sususec:2_8_p64_2}
+\todo
+
+\subsubsection{\exercise{2.5} \page{65}}    \label{sususec:exe_2_5} 
+\paragraph{\phantom{,}}
+In the rest frame of the observer we have $u^\mu=(1,\vec{0})$ and $p^\mu=(E,\vec{p})$, s.t.
+\[-\boldsymbol{p}\cdot\boldsymbol{u}=-(-E)=E.\]
+Since this was computed in the rest frame of the observer $E$ is indeed the energy which the observer would measure.
+\paragraph{\phantom{,}}
+In the rest frame of the particle we have $p^\mu=(m,\vec{0})$, s.t.
+\[\boldsymbol{p}^2=-m^2\]
+which has to equal the $\boldsymbol{p}^2=-E^2+\vec{p}^2$ measured by the observer.
+\paragraph{\phantom{,}}
+\begin{align*} 
+	\abs{\vec{p}}^2&\overset{b)}{=}E^2+\boldsymbol{p}^2\\
+	\Rightarrow 	\abs{\vec{p}}&\overset{a)}{=}\sqrt{(\boldsymbol{p}\cdot\boldsymbol{u})^2 +\boldsymbol{p}\cdot\boldsymbol{p}}
+\end{align*}
+\paragraph{\phantom{,}}
+From \eq{2.2} we know $p^\mu=m \left(u_p\right)^\mu=(m\gamma,m\gamma\vec{v})$, s.t.:
+\begin{align*} 
+	\dfrac{\abs{\vec{p}}^2}{E^2}&\overset{a),c)}{=}\dfrac{(\boldsymbol{p}\cdot\boldsymbol{u})^2}{(\boldsymbol{p}\cdot\boldsymbol{u})^2}+\dfrac{\boldsymbol{p}\cdot\boldsymbol{p}}{E^2}\\
+	&\overset{b)}{=}1-\dfrac{m^2}{E^2}\\
+	&=1-\dfrac{m^2}{\gamma^2m^2}\\
+	&\overset{\eqc{2.2}}{=}\vec{v}^2\\
+	\Rightarrow \abs{\vec{v}}&=\dfrac{\abs{\vec{p}}}{E}
+\end{align*}
+\paragraph{\phantom{,}}
+Work in the rest frame of the observer:
+\begin{align*} 
+	\left(\dfrac{\boldsymbol{p}+(\boldsymbol{p}\cdot\boldsymbol{u})\boldsymbol{u}}{-\boldsymbol{p}\cdot\boldsymbol{u}}\right)^\mu&\overset{a)}{=}\left(\dfrac{\boldsymbol{p}-E\boldsymbol{u}}{E}\right)^\mu\\
+	&=\left(\dfrac{E-E}{E},\dfrac{\vec{p}}{E}\right)\\
+	&=\left(0,\dfrac{\vec{v}\abs{\vec{p}}}{\abs{\vec{v}}E}\right)\\
+	&\overset{d)}{=}\left(0,\vec{v}\right)
+\end{align*}
+
+
+\subsubsection{\exercise{2.6} \page{65}}    \label{sususec:exe_2_6} 
+In any local Lorentz-frame we have:
+\begin{align*} 
+	\derivative{T}{\tau}&=\derivative{x^\alpha}{\tau}\partialderivative{T}{x^\alpha}\\
+	&=u^\alpha \partialderivative{T}{x^\alpha}\\
+	&=\partial_{\boldsymbol{u}}T\\
+	&=\apply{\boldsymbol{\dd}T}{\boldsymbol{u}}
+\end{align*}
+In the local Lorentz-frame of the cosmic ray we have $u^\mu=(1,\vec{0})$, s.t. this really \emph{is} the time derivative as measured by the clock of the cosmic ray.
+This result is reasonable as due to the movement of the cosmic ray the spatial change of $T$ must be factored in.
+
+\subsection{Lorentz transformations}\label{susec:2-9}
+\subsubsection{\eq{2.40} \page{66}}
+\begin{align*} 
+	\boldsymbol{u}&=\derivative{x^\beta}{\tau}\boldsymbol{e}_\beta\\
+	&\overset{\eqc{2.39}}{=}\derivative{x^{\alpha^\prime}}{\tau}\underbrace{\Lambda^{\beta}_{\phantom{\beta}\alpha^\prime}\boldsymbol{e}_\beta}_{=\boldsymbol{e}_{\alpha^\prime}}
+\end{align*}
+\subsubsection{\cbox{2.4} \page{67}}
+\paragraph{\enquote{Aberration, incoming photon:\dots}\page{68}}
+See Wikipedia \enquote{Relativistic aberration}, general setup of definitions of angles, etc. is not clear.\todo
+
+\paragraph{\enquote{Effect of transformation on other quantities:\dots}\page{68}}
+One has to be careful in these equations about which system (primed or un-primed) is written on what side and remember the notation from \eqs{2.38/39}.
+
+
+
+\begin{widetext}
+	\subsubsection{\exercise{2.7} \page{69}}\label{sususec:exe-2-7} 
+	\begin{equation} 
+		\label{eq:exe-2-7-general-trafo}
+		\|\Lambda^{\nu^\prime}_{\phantom{\nu^\prime}\mu}\|=\left(
+		\begin{array}{cccc}
+			\gamma & -\beta\gamma n^1 & -\beta\gamma n^2 & -\beta\gamma n^3 \\
+			-\beta\gamma n^1 & (\gamma-1)\left(n^1\right)^2+1 & (\gamma-1)n^1n^2 & (\gamma-1)n^1n^3 \\
+			-\beta\gamma n^2 & (\gamma-1)n^2n^1 & (\gamma-1)\left(n^2\right)^2+1 & (\gamma-1)n^2n^3 \\
+			-\beta\gamma n^3 & (\gamma-1)n^3n^1 & (\gamma-1)n^3n^2 & (\gamma-1)\left(n^3\right)^2+1
+		\end{array}
+		\right)
+	\end{equation}
+	\paragraph{\phantom{,}}
+	\begin{align*} 
+		\Lambda^{\nu^\prime}_{\phantom{\nu^\prime}\alpha}\eta_{\nu^\prime\mu^\prime}\Lambda^{\mu^\prime}_{\phantom{\mu^\prime}\beta}&=
+		-\Lambda^{0^\prime}_{\phantom{0^\prime}\alpha}\Lambda^{0^\prime}_{\phantom{0^\prime}\beta}+\Lambda^{i^\prime}_{\phantom{i^\prime}\alpha}\Lambda^{i^\prime}_{\phantom{i^\prime}\beta}\overset{!}{=}\eta_{\alpha\beta}
+	\end{align*}
+	For the $\alpha=\beta=0$ component we get:
+	\begin{align*} 
+		&\Lambda^{\nu^\prime}_{\phantom{\nu^\prime}0}\eta_{\nu^\prime\mu^\prime}\Lambda^{\mu^\prime}_{\phantom{\mu^\prime}0}
+		=-\gamma^2+\beta^2\gamma^2n^in^i
+		=-\gamma^2\left(1-\beta^2\right)=-1
+	\end{align*}
+	
+	For the $\alpha=0, \beta=j$ components we get:
+	\begin{align*} 
+		&\Lambda^{\nu^\prime}_{\phantom{\nu^\prime}0}\eta_{\nu^\prime\mu^\prime}\Lambda^{\mu^\prime}_{\phantom{\mu^\prime}j}
+		=-\gamma\left(-\beta\gamma n^j\right)+\left(-\beta\gamma n^i\right)\left((\gamma-1)n^in^j+\delta^i_j\right)
+		=\beta\gamma^2 n^j-\beta\gamma^2 n^j+\beta\gamma n^j-\beta\gamma n^j=0
+	\end{align*}
+	
+	For the $\alpha=j, \beta=k$ components we get:
+	\begin{align*} 
+		\Lambda^{\nu^\prime}_{\phantom{\nu^\prime}j}\eta_{\nu^\prime\mu^\prime}\Lambda^{\mu^\prime}_{\phantom{\mu^\prime}k}
+		&=-\beta^2\gamma^2n^jn^k+\left((\gamma-1)n^in^j+\delta^i_j\right)\left((\gamma-1)n^in^k+\delta^i_k\right)\\
+		&=-\beta^2\gamma^2n^jn^k+(\gamma-1)^2n^jn^k+2(\gamma-1)n^jn^k+\delta_{jk}
+		=n^jn^k\left(-\beta^2\gamma^2+\gamma^2-2\gamma+1+2\gamma-2\right)+\delta_{jk}=\delta_{jk}
+	\end{align*}
+	\paragraph{\phantom{,}}
+	The 4-velocity of the primed frame as seen in the primed frame is $u^{\nu^\prime}=\left(1,\vec{0}\right)$, and as seen in the un-primed frame it is:
+	\begin{equation*} 
+		u^{\mu}=\Lambda^{\mu}_{\phantom{\mu}\nu^\prime} u^{\nu^\prime}=\Lambda^{\mu}_{\phantom{\mu}0^\prime}=\left(\gamma,\beta\gamma\vec{n}\right)\Rightarrow\vec{v}=\beta\vec{n}
+	\end{equation*}
+	\paragraph{\phantom{,}}
+	Same as b) with $\beta\rightarrow-\beta$.
+	\paragraph{\phantom{,}}
+	For motion in z-direction we have $n^3=1,n^1=n^2=0$, with this and \crefeq{exe-2-7-general-trafo} we obtain \eq{2.45}.
+\end{widetext}
+
+\subsection{Collisions}\label{susec:2_10}
+See e.g. Weinberg QFT.
+
+
 
